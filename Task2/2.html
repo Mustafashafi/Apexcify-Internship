@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Calculator — Apexcify</title>
+  <link rel="stylesheet" href="2.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="calculator" role="application" aria-label="Calculator">
+      <div class="brand">
+        <div class="badge">AT</div>
+        <div>
+          <div class="title">Apexcify Calculator</div>
+          <div class="sub">Basic arithmetic • keyboard & click</div>
+        </div>
+      </div>
+
+      <div class="screen" id="screen" aria-live="polite">
+        <div class="expr" id="expression" aria-label="Expression">0</div>
+        <div class="result" id="result" aria-label="Result">0</div>
+      </div>
+
+      <div class="kbd-hint">Tip: Use keyboard — numbers, + - * / . Enter, Backspace, Esc</div>
+
+      <div class="keys" id="keys" aria-hidden="false">
+        <!-- Row 1 -->
+        <button class="key ctrl" data-action="clear" title="Clear (Esc)">C</button>
+        <button class="key ctrl" data-action="delete" title="Delete (Backspace)">DEL</button>
+        <button class="key ctrl" data-value="(">(</button>
+        <button class="key op" data-value=")">)</button>
+        <!-- Row 2 -->
+        <button class="key" data-value="7">7</button>
+        <button class="key" data-value="8">8</button>
+        <button class="key" data-value="9">9</button>
+        <button class="key op" data-value="/">÷</button>
+        <!-- Row 3 -->
+        <button class="key" data-value="4">4</button>
+        <button class="key" data-value="5">5</button>
+        <button class="key" data-value="6">6</button>
+        <button class="key op" data-value="*">×</button>
+        <!-- Row 4 -->
+        <button class="key" data-value="1">1</button>
+        <button class="key" data-value="2">2</button>
+        <button class="key" data-value="3">3</button>
+        <button class="key op" data-value="-">−</button>
+        <!-- Row 5 -->
+        <button class="key wide" data-value="0">0</button>
+        <button class="key" data-value=".">.</button>
+        <button class="key op" data-value="+">+</button>
+        <!-- Row 6 -->
+        <button class="key wide op" data-action="equals" style="grid-column:span 4;background:linear-gradient(90deg,var(--accent),var(--accent-2));font-size:16px;padding:12px">=</button>
+      </div>
+
+      <div class="hint">Real-time preview shown above — press = or Enter to finalize.</div>
+    </div>
+  </div>
+
+  <script src="2.js"></script>
+</body>
+</html>

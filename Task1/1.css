@@ -1,0 +1,53 @@
+:root{
+  --bg:#0f1724; --card:#0b1220; --accent:#4f46e5; --muted:#94a3b8;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:Arial, sans-serif;
+  background:linear-gradient(180deg,#0f1724,#08131f);
+  color:#fff;
+}
+.wrap{max-width:1200px;margin:auto;padding:20px}
+header{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+.logo{font-size:24px;font-weight:bold;color:var(--accent)}
+nav a{color:#fff;text-decoration:none;margin:0 10px}
+nav a:hover{color:var(--accent)}
+.hero{text-align:center;padding:40px 20px}
+.hero h1{font-size:2.5em;margin-bottom:10px}
+.hero p{color:var(--muted);margin-bottom:20px}
+.cta{background:var(--accent);padding:12px 20px;border-radius:8px;color:white;text-decoration:none;font-weight:bold}
+.cta:hover{background:#372fc4}
+.filter-buttons{text-align:center;margin:20px 0}
+.filter-buttons button{
+  background:transparent;color:white;border:1px solid var(--accent);
+  padding:8px 14px;margin:0 5px;border-radius:6px;cursor:pointer;
+}
+.filter-buttons button.active, .filter-buttons button:hover{
+  background:var(--accent);
+}
+.gallery{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:15px;margin-top:20px
+}
+.tile{position:relative;overflow:hidden;border-radius:10px;cursor:pointer;transition:transform 0.3s ease,opacity 0.3s ease}
+.tile img{width:100%;height:220px;object-fit:cover;transition:transform 0.4s ease}
+.tile:hover img{transform:scale(1.1)}
+.tile .meta{position:absolute;bottom:10px;left:10px;background:rgba(0,0,0,0.5);padding:5px 10px;border-radius:6px;font-size:14px}
+footer{text-align:center;color:var(--muted);padding:20px;margin-top:40px}
+@media(max-width:600px){.hero h1{font-size:1.8em}}
+
+/* Lightbox Styles */
+.lightbox{
+  position:fixed;inset:0;background:rgba(0,0,0,0.85);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;transition:opacity 0.3s;z-index:999;
+}
+.lightbox.open{opacity:1;pointer-events:auto;}
+.lightbox img{max-width:90%;max-height:80%;border-radius:10px;box-shadow:0 4px 20px rgba(0,0,0,0.6);}
+.lightbox button{
+  position:absolute;top:50%;transform:translateY(-50%);
+  background:none;border:none;color:white;font-size:2em;cursor:pointer;padding:10px;
+}
+.lightbox .prev{left:20px;}
+.lightbox .next{right:20px;}
+.lightbox .close{top:20px;right:20px;transform:none;font-size:2em;}
